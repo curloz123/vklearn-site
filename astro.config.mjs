@@ -8,7 +8,7 @@ export default defineConfig({
 		starlight({
 			title: 'LearnVulkan',
 			pagefind: true,
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/curloz123/vklearn' }],
 			sidebar: [
 				{
 					label: 'Introduction',
