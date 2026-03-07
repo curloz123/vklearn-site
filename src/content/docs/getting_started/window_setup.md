@@ -3,7 +3,7 @@ title: Window Setup
 description: Setting up GLFW for window creation and input handling
 ---
 
-Ok so, where do you think we're gonna render our stuff on…
+Ok so, where do you think we're gonna show our stuff on…
 
 A **Window!!** Of course.
 
