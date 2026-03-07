@@ -155,6 +155,7 @@ Open your file manager, navigate to the extracted GLFW folder, go to `build → 
 
 :::note
 Please don't curse at me, but you could have straight away downloaded the pre-built library from the site. But thing is not every library will have that convenience available for you. This was all to teach you the process of compiling open source libraries yourself. Trust me, you'll thank me later ;)
+:::
 
 ## Starting the Project
 
