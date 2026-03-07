@@ -8,7 +8,11 @@ Ok so, where do you think we're gonna render our stuff on…
 A **Window!!** Of course.
 
 The first step for us to render anything on screen is window creation. Besides that, we also need to detect input events — say a right click fires a command in the game. You get the point.
-
+:::note
+Not everything you render will specifically be shown on the screen. 
+A good example of that is offscreen rendering, but that's an 
+advanced topic left for later.
+:::
 Now there are several ways to create a window. Every operating system has its own method — Windows has the Win32 API, macOS has Cocoa, Linux has X11 and Wayland.
 
 But writing different code for every operating system is a pain (many AAA companies do this though). So to ease our process we have libraries — and with that, comes the introduction to our first library.
@@ -148,6 +152,9 @@ All the terminal work has now comenced(is that the right spelling?) — and so i
 Open your file manager, navigate to the extracted GLFW folder, go to `build → src`, and you should see a `libglfw3.a` file. That's our library.
 ![bin folder inside extracted file](../../../assets/getting_started/window_setup/glfw3lib.png)
 <!-- glfw3lib.png -->
+
+:::note
+Please don't curse at me, but you could have straight away downloaded the pre-built library from the site. But thing is not every library will have that convenience available for you. This was all to teach you the process of compiling open source libraries yourself. Trust me, you'll thank me later ;)
 
 ## Starting the Project
 
