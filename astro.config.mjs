@@ -23,6 +23,7 @@ export default defineConfig({
 					items: [
 						// Each item here is one entry in the navigation menu.
 						{ label: 'Environment Setup', slug: 'getting_started/env_setup' },
+						{ label: 'Window Setup', slug: 'getting_started/window_setup' },
 					],
 				},
 			],
