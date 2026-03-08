@@ -6,7 +6,7 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'LearnVulkan',
+			title: 'vklearn',
 			pagefind: true,
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/curloz123/vklearn' }],
 			sidebar: [
@@ -24,6 +24,7 @@ export default defineConfig({
 						// Each item here is one entry in the navigation menu.
 						{ label: 'Environment Setup', slug: 'getting_started/env_setup' },
 						{ label: 'Window Setup', slug: 'getting_started/window_setup' },
+						{ label: 'Hello Window', slug: 'getting_started/hello_window' },
 					],
 				},
 			],

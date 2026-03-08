@@ -47,7 +47,7 @@ My main aim in writing this site is to help people learn Vulkan easily. There ar
 
 | Resource | Description |
 |---|---|
-| [vulkan-tutorial.com](https://vulkan-tutorial.com/) | The most well known Vulkan tutorial, good starting point but outdated in places |
-| [vk-guide.dev](https://vkguide.dev/) | Great reference but more of a guide than a step-by-step tutorial |
+| [vulkan-tutorial.com](https://vulkan-tutorial.com/) | The most well known Vulkan tutorial, but outdated in places, but every concept is taught well |
+| [vk-guide.dev](https://vkguide.dev/) | Great reference and has excellent programming practices |
 | [Official Khronos Docs](https://docs.vulkan.org/tutorial/latest/00_Introduction.html) | The official documentation, dense but authoritative |
-| [Sascha Willems](https://github.com/SaschaWillems/Vulkan) | Excellent code examples for almost every Vulkan feature, but you'll need to read the code yourself |
+| [Sascha Willems](https://github.com/SaschaWillems/Vulkan) | Excellent code examples for Vulkan, almost every feature you would've heard of, has been implemented there |

@@ -14,7 +14,7 @@ It is cross-platform by nature, meaning code written in Vulkan can be compiled a
 OpenGL is more of a **graphics API** — whatever operation you perform using it is just meant for graphics purposes. Vulkan on the other hand allows you to talk directly to the GPU and command it to perform compute or graphics operations. It's basically like:
 
 - In **OpenGL** — you request the GPU to *please do this*
-- In **Vulkan** — you send it multiple papers stating all the work that needs to be done, and hand it the entire stack at once
+- In **Vulkan** — you send it multiple papers stating all the work that needs to be done.
 
 That's why in the last chapter I said comparing OpenGL to Vulkan is kinda vague. They're solving different problems at different levels — it's apples to oranges.
 
