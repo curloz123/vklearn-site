@@ -195,6 +195,7 @@ for (int i = 0; i < requiredExtensions.size(); ++i)
     {
         if (std::strcmp(requiredExtensions[i], availableExtensions[j].extensionName) == 0)
             found = true;
+            break;
     }
     if (!found)
     {
