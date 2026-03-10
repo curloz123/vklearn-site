@@ -115,16 +115,16 @@ sudo dnf install vulkan-tools vulkan-headers vulkan-validation-layers-devel
 
 # Gentoo
 sudo/doas emerge -av media-libs/vulkan-loader dev-util/vulkan-tools
+
+# OpenSUSE
+sudo zypper install vulkan-tools vulkan-devel vulkan-validationlayers
 ```
 
 :::note
 Gentoo users — enable the `vkcube` USE flag for `dev-util/vulkan-tools`.
 :::
 
-```bash
-# OpenSUSE
-sudo zypper install vulkan-tools vulkan-devel vulkan-validationlayers
-```
+
 
 Now open a terminal and type:
 
