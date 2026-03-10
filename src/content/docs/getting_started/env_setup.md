@@ -126,8 +126,10 @@ Gentoo users — enable the `vkcube` USE flag for `dev-util/vulkan-tools`.
 
 
 
-Now open a terminal and type:
 
+## Verify Installation
+
+Now open a terminal and type:
 ```bash
 vkcube
 ```
