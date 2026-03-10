@@ -10,6 +10,7 @@ Add the following includes at the top:
 ```cpp
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
+#include <stdio.h>
 ```
 
 If you don't see any warnings or errors in your IDE, congratulations — you've set up everything correctly.

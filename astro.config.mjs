@@ -25,6 +25,7 @@ export default defineConfig({
 						{ label: 'Environment Setup', slug: 'getting_started/env_setup' },
 						{ label: 'Window Setup', slug: 'getting_started/window_setup' },
 						{ label: 'Hello Window', slug: 'getting_started/hello_window' },
+						{ label: 'Instance', slug: 'getting_started/instance' },
 					],
 				},
 			],
