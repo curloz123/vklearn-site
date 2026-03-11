@@ -22,7 +22,7 @@ Of course, directly talking to the GPU is powerful sorcery — but *"with great 
 
 ## How is Vulkan installed?
 
-Unlike the libraries we're gonna use later, there's no separate library to install for Vulkan. It is already inside your GPU. The drivers you install for your GPU already have the Vulkan implementation baked in. In simple terms, all the functions you're gonna call are already present in your GPU drivers. You just have to install the **Vulkan SDK** separately for the development tools.
+Unlike the libraries we're going to use later, there's no separate library to install for Vulkan. It is already inside your GPU. The drivers you install for your GPU already have the Vulkan implementation baked in. In simple terms, all the functions you're gonna call are already present in your GPU drivers. You just have to install the **Vulkan SDK** separately for the development tools.
 
 :::tip
 If you encounter a bug, just make sure to update your drivers to the latest version — 99% chance it will be fixed :)
@@ -44,4 +44,4 @@ The database may show outdated info for your GPU, especially on Linux. Always ve
 
 ## Let's get started
 
-Beginning next chapter, we're gonna start setting up our environment and writing our first lines of Vulkan code — so fire up your code editors, because it's coding time! 🚀
+Beginning next chapter, we will start setting up our environment and writing our first lines of Vulkan code — so fire up your code editors, because it's coding time! 🚀

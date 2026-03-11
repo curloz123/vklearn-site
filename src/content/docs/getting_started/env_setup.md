@@ -10,7 +10,7 @@ We will mainly target Linux and Windows. macOS support is not planned, but might
 
 First, we need a code editor. There are numerous options, and I advise you use the one you're most comfortable with. But if you want to follow along with me, that's fine too.
 
-I'm gonna use VSCodium here and set up its environment. You can use VS Code too — there's no real difference between them, just that VS Code uses some telemetry.
+I'm going to use VSCodium here and set up its environment. You can use VS Code too — there's no real difference between them, just that VS Code uses some telemetry.
 
 - Install **VSCodium** from here — https://github.com/VSCodium/vscodium/releases
 - Or **VS Code** from here — https://code.visualstudio.com/
@@ -21,7 +21,7 @@ Fire it up once and customize it however you like.
 
 ## Compiler
 
-We're gonna be using GCC (GNU Compiler Collection). You can use any compiler of your choice, just make sure it has at least C++17 support.
+We're going to be using GCC (GNU Compiler Collection). You can use any compiler of your choice, just make sure it has at least C++17 support.
 
 ### Windows
 

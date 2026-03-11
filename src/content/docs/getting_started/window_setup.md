@@ -3,7 +3,7 @@ title: Window Setup
 description: Setting up GLFW for window creation and input handling
 ---
 
-Ok so, where do you think we're gonna show our stuff on…
+Ok so, where do you think we're going to show our stuff on…
 
 A **Window!!** Of course.
 
@@ -27,7 +27,7 @@ We are going to build GLFW from source, meaning we are going to compile its sour
 
 ### CMake
 
-A free, cross-platform software development tool for building applications. We're gonna use this to generate our build system — a system that compiles all our files. Don't worry, it's just a file that when executed, will compile everything.
+A free, cross-platform software development tool for building applications. We're going to use this to generate our build system — a system that compiles all our files. Don't worry, it's just a file that when executed, will compile everything.
 
 **Windows** — Install the installer from here: https://cmake.org/download/
 
