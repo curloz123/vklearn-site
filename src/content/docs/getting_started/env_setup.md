@@ -114,7 +114,7 @@ sudo pacman -S vulkan-headers vulkan-validation-layers vulkan-tools
 sudo dnf install vulkan-tools vulkan-headers vulkan-validation-layers-devel
 
 # Gentoo
-sudo/doas emerge -av media-libs/vulkan-loader dev-util/vulkan-tools
+sudo/doas emerge -av media-libs/vulkan-loader dev-util/vulkan-tools media-libs/vulkan-layers
 
 # OpenSUSE
 sudo zypper install vulkan-tools vulkan-devel vulkan-validationlayers

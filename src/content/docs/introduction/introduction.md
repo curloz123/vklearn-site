@@ -3,7 +3,7 @@ title: Introduction
 description: Welcome to LearnVulkan — a practical Vulkan tutorial for developers
 ---
 
-Welcome to LearnVulkan! You probably came here because you wanna learn computer graphics and show cool stuff on your display and show off to other guys (you're not partially wrong). Doing things from scratch is a respectable choice. Of course you're going to learn Vulkan, and I appreciate you for choosing it — even though I'm 99% sure you must've heard how OpenGL vs Vulkan is basically Python vs assembly. That phrase is kinda vague (you'll know why later), but that pretty much is the gist of how hard Vulkan is going to be.
+Welcome to VkLearn. You probably came here because you wanna learn computer graphics and show cool stuff on your display and show off to other guys (you're not partially wrong). Doing things from scratch is a respectable choice. Of course you're going to learn Vulkan, and I appreciate you for choosing it — even though I'm 99% sure you must've heard how OpenGL vs Vulkan is basically Python vs assembly. That phrase is kinda vague (you'll know why later), but that pretty much is the gist of how hard Vulkan is going to be.
 
 ## Prerequisites
 

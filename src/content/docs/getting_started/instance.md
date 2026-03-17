@@ -21,6 +21,29 @@ Now let's start by creating the Vulkan instance. First add the Vulkan header:
 #include <vulkan/vulkan.h>
 ```
 
+
+The first thing we do is create a `VkApplicationInfo` struct. This struct defines information about our application, and is defined like this - 
+```c
+typedef struct VkApplicationInfo {
+    VkStructureType    sType;
+    const void*        pNext;
+    const char*        pApplicationName;
+    uint32_t           applicationVersion;
+    const char*        pEngineName;
+    uint32_t           engineVersion;
+    uint32_t           apiVersion;
+} VkApplicationInfo;
+```
+The `.sType` member defines which structure is this. In this case since we are creating application info, we set it to `VK_STRUCTURE_TYPE_APPLICATION_INFO`.
+Second variable is `pNext` which is a pointer extending this structure, not necessary right now, will teach this later.
+Third, fourth and fifth variable defines the info about your engine. You can keep it anything as you want.
+And at last is`apiVersion` where we define which API version we want to use. Since we want to use 1.3, we will set it to `VK_API_VERSION_1_3`.
+
+
+
+You can read more about this struct here — [VkApplicationInfo](https://docs.vulkan.org/refpages/latest/refpages/source/VkApplicationInfo.html)
+
+For now lets just write this much - 
 ```cpp
 int main()
 {
@@ -44,10 +67,6 @@ int main()
 }
 ```
 
-The first thing we do is create a `VkApplicationInfo` struct. This struct defines information about our application.
-
-We define what type of struct we're creating by setting `.sType` to `VK_STRUCTURE_TYPE_APPLICATION_INFO`. The next three fields define the name and version of our application and engine. The important field is the last one — `.apiVersion`. Here we define that we will use Vulkan 1.3.
-
 :::note
 In Vulkan, a lot of information is passed using structs like the one above. Although this may seem lengthy, the benefit is we can clearly state exactly what we want.
 :::
@@ -56,10 +75,26 @@ In Vulkan, a lot of information is passed using structs like the one above. Alth
 Always default initialize your structs with `{}` when creating any Vulkan struct. This makes the compiler initialize the entire struct to 0, which is much safer than leaving fields uninitialized.
 :::
 
-You can read more about this struct here — [VkApplicationInfo](https://docs.vulkan.org/refpages/latest/refpages/source/VkApplicationInfo.html)
+Next, we define instance creation information.
+For this we create a `VkInstanceCreateInfo` struct which is defined like this - 
+```c
+typedef struct VkInstanceCreateInfo {
+    VkStructureType             sType;
+    const void*                 pNext;
+    VkInstanceCreateFlags       flags;
+    const VkApplicationInfo*    pApplicationInfo;
+    uint32_t                    enabledLayerCount;
+    const char* const*          ppEnabledLayerNames;
+    uint32_t                    enabledExtensionCount;
+    const char* const*          ppEnabledExtensionNames;
+} VkInstanceCreateInfo;
+```
+The `flags` variable define what flags to enable. Flags indicate the behaviour of struct. Not necessasry right now, will teach this properly later when used.
+`pApplicationInfo` takes pointer to `VkApplicationInfo` object. We will pass the one we just created.
+The next two are for layers, we will disable this right now, but we will return to them in the next chapter.
+The next two defines the extensions, these are important and i will teach them now.
 
-Next, we define instance creation information:
-
+For now just write this much
 ```cpp
 // instance info
 VkInstanceCreateInfo instanceInfo = {};
@@ -69,7 +104,6 @@ instanceInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
 instanceInfo.pApplicationInfo = &appInfo;
 ```
 
-First we create a `VkInstanceCreateInfo` struct and set its type to `VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO`. It needs information about our application, so we pass the address of our `appInfo` struct to `pApplicationInfo`.
 
 You can read more about this struct here — [VkInstanceCreateInfo](https://docs.vulkan.org/refpages/latest/refpages/source/VkInstanceCreateInfo.html)
 
@@ -314,3 +348,10 @@ Defining functions in a header file is not good C++ practice. Every tutorial is 
 :::
 
 Compile and see if everything is working fine. 
+
+**[Source Code is available here](https://github.com/curloz123/vklearn/tree/master/Getting%20Started/Instance)**
+## Extra Resources
+
+| Resource | Description |
+|---|---|
+| [Vulkan-tutorial — Instance](https://vulkan-tutorial.com/Drawing_a_triangle/Setup/Instance) | Vulkan-tutorial's equivalent chapter, good reference |   
