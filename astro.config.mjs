@@ -27,6 +27,8 @@ export default defineConfig({
 						{ label: 'Hello Window', slug: 'getting_started/hello_window' },
 						{ label: 'Instance', slug: 'getting_started/instance' },
 						{ label: 'Validation Layers', slug: 'getting_started/validation_layers' },
+						{ label: 'Window Surface', slug: 'getting_started/surface' },
+
 
 					],
 				},

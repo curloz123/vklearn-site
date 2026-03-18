@@ -45,8 +45,10 @@ for (const char* requiredLayer : validationLayers)
     for (const VkLayerProperties &layerProperty : availableLayers)
     {
         if (std::strcmp(requiredLayer, layerProperty.layerName) == 0)
+        {
             layerFound = true;
-        break;
+            break;
+        }
     }
     if (!layerFound)
     {
