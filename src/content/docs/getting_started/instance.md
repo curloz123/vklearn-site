@@ -253,7 +253,7 @@ instanceInfo.ppEnabledExtensionNames = requiredExtensions.data();
 
 As you can see, creating something as simple as an instance already takes a decent amount of lines. Later there are going to be things that take even more. So it's better to create a function for this.
 
-Create a file named `initializers.hpp`:
+Create a file named `boilerplate.hpp`:
 
 ```cpp
 #pragma once
@@ -323,28 +323,31 @@ bool createInstance(VkInstance* pInstance, const std::vector<const char*>& requi
 Remove all the instance creation code from `hellovulkan.cpp` and replace it with:
 
 ```cpp
-#include "initializers.hpp"
+#include "boilerplate.hpp"
 
-// Window creation code above
-
-uint32_t glfwExtensionCount = 0;
-const char** glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
-
-std::vector<const char*> requiredExtensions;
-for (int i = 0; i < glfwExtensionCount; ++i)
+int main()
 {
-    requiredExtensions.emplace_back(glfwExtensions[i]);
+    // Window creation code above
+
+    uint32_t glfwExtensionCount = 0;
+    const char** glfwExtensions = glfwGetRequiredInstanceExtensions(&      glfwExtensionCount);
+
+    std::vector<const char*> requiredExtensions;
+    for (int i = 0; i < glfwExtensionCount; ++i)
+    {
+        requiredExtensions.emplace_back(glfwExtensions[i]);
+    }
+
+    kInstance instance;
+    if (!createInstance(&instance, requiredExtensions))
+        return 1;
+
+    // game loop below
 }
-
-VkInstance instance;
-if (!createInstance(&instance, requiredExtensions))
-    return 1;
-
-// game loop below
 ```
 
 :::note
-Defining functions in a header file is not good C++ practice. Every tutorial is made for readability and learning, and might not follow best C++ practices. Once you are comfortable with Vulkan, I'd recommend looking into proper C++ project organization.
+Defining functions in a header file is not good C++ practice. Every tutorial is made for readability and learning, and might not follow best C++ practices. Once you are comfortable with Vulkan, I'd recommend looking into proper C++ project organization. One of the methods to avoid this violation is to make the function inline, read more about them [here](https://www.learncpp.com/cpp-tutorial/inline-functions-and-variables/)
 :::
 
 Compile and see if everything is working fine. 

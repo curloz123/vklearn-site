@@ -66,7 +66,7 @@ Then again like extensions, we check if the requested layer is available or not.
 Lets head over to instance creation, where if you remember I asked you to disable layers. We need to enable them now. Modify the instance creation function to also accept layers as a parameter. 
 
 ```cpp
-// initializers.hpp
+// boilerplate.hpp
 
 bool createInstance(VkInstance *pInstance, const std::vector<const char*> &requiredExtensions, const std::vector<const char*> &validationLayers)
 ```
@@ -74,7 +74,7 @@ bool createInstance(VkInstance *pInstance, const std::vector<const char*> &requi
 Now enable them by passing in the VkInstanceCreateInfo struct
 
 ```cpp
-// initializers.hpp
+// boilerplate.hpp
 {
     // ...
 
@@ -119,13 +119,13 @@ requiredExtensions.emplace_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
 Notice how I wrote `VK_EXT_DEBUG_UTILS_EXTENSION_NAME` instead of directly writing `VK_EXT_debug_utils`. These macros are just made to avoid typos.
 
 ### Callback Function
-Lets create the `callback function` in a new file named debugmessenger.hpp (or anything you want)
-:::note
+Lets create the `callback function` in boilerplate.hpp 
+
 A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action. For example here the routine is whenever validation layers need to print anything. And vulkan will take pointer to our callback function and call it by passing its relevant parameters.
 :::
 
 ```cpp
-// debugmessenger.hpp
+// boilerplate.hpp
 #pragma once
 #include <vulkan/vulkan.h>
 #include <cstdio>
@@ -158,7 +158,7 @@ The first argument is `VkDebugUtilsMessageSeverityFlagBitsEXT` enum (name is unb
 A good thing about this enum is that you can kind of rank the messages as per their severity. Means we can do this
 
 ```cpp
-// debugmessenger.hpp
+// boilerplate.hpp
 if (messageSeverity >= VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT) {
     // Message is important enough to show :)))))
 }
@@ -182,7 +182,7 @@ Finally, the `pUserData` (finally something short), contains a pointer that was 
 Well, now that the mammoth of a function has been completed, this is how it should look like
 
 ```cpp
-// debugmessenger.hpp
+// boilerplate.hpp
 VKAPI_ATTR VkBool32 VKAPI_CALL printMessage(
 VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
 VkDebugUtilsMessageTypeFlagsEXT messageType,
@@ -202,7 +202,7 @@ Ok now that we have finally created the callback function, we need to tell vulka
 Create another function named createDebugMessenger - 
 
 ```cpp
-// debugmessenger.hpp
+// boilerplate.hpp
 VkResult createDebugMessenger(VkInstance instance, VkDebugUtilsMessengerEXT *pDebugMessenger)
 {
     // Our code
@@ -234,7 +234,7 @@ Read more about `VkDebugUtilsMessengerCreateInfoEXT` [here](https://docs.vulkan.
 Now lets code this 
 
 ```cpp
-// debugmessenger.hpp
+// boilerplate.hpp
 VkResult createDebugMessenger(VkInstance instance, VkDebugUtilsMessengerEXT *pDebugMessenger)
 {
     VkDebugUtilsMessengerCreateInfoEXT messengerInfo{};
@@ -261,7 +261,7 @@ First we retrieve the function via the [vkGetInstanceProcAddr](https://docs.vulk
 This function takes in instance and name of the command to retrieve as parameters. This function returns the function as void pointer, so we need to convert it to relevant pointer to function data type. It returns NULL if function is not found.
 
 ```cpp
-// debugmessenger.hpp
+// boilerplate.hpp
     PFN_vkCreateDebugUtilsMessengerEXT createMessenger = (PFN_vkCreateDebugUtilsMessengerEXT) vkGetInstanceProcAddr(instance, "vkCreateDebugUtilsMessengerEXT");
     if (createMessenger == NULL)
     {
@@ -297,7 +297,7 @@ if (createDebugMessenger(instance, &debugMessenger) != VK_SUCCESS)
 Ofcourse, since we created it manually, we need to destroy it too. Similar to creation, we need to retrieve destruction function. Create a function named destroyDebugMessenger - 
 
 ```cpp
-// debugmessenger.hpp
+// boilerplate.hpp
 void destroyDebugMessenger(VkInstance instance, VkDebugUtilsMessengerEXT debugMessenger)
 {
     PFN_vkDestroyDebugUtilsMessengerEXT destroyMessenger = (PFN_vkDestroyDebugUtilsMessengerEXT) vkGetInstanceProcAddr(instance, "vkDestroyDebugUtilsMessengerEXT");
