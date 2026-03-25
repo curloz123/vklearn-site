@@ -28,6 +28,8 @@ export default defineConfig({
 						{ label: 'Instance', slug: 'getting_started/instance' },
 						{ label: 'Validation Layers', slug: 'getting_started/validation_layers' },
 						{ label: 'Window Surface', slug: 'getting_started/surface' },
+						{ label: 'Physical Device', slug: 'getting_started/physical_device' },
+
 
 
 					],
