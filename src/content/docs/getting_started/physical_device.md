@@ -324,6 +324,11 @@ printf("Selected GPU: %s\n", deviceProperties.deviceName);
 
 Compile and see if everything is fine. 
 
+:::note
+Since we didnt explicitly call any vkCreatePhysicalDevice (make a new GPU), theres no reason the destroy the handle. Reason is simple, what if we accidentally destroyed our gpu via vkDestroyPhysicalDevice (-_-)
+. Ok that was lame but reason is similar. We are not creating anything new, just retrieving handle to it. Handle would be automatically destroyed when instance is destroyed
+:::
+
 ---
 
 
