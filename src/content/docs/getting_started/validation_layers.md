@@ -349,7 +349,7 @@ Well everything is completed, don't forget to uncomment `destroyDebugMessenger` 
 Since validation layers sit between the program and the drivers, every operation that we perform passes through validation layers. For debug purposes this is good, but this adds an extra overhead over every call which can result in slightly decreased performance. Just disable it whenever you ship something.
 :::
 
-Source Code is available **[here](https://github.com/curloz123/vklearn/tree/master/Getting%20Started/validation%20layers)**
+Source Code is available **[here](https://codeberg.org/curl0z/vklearn/src/branch/master/Getting%20Started/validation%20layers)**
 ## Extra Resources
 
 | Resource | Description |

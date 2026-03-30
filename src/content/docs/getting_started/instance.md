@@ -352,7 +352,7 @@ Defining functions in a header file is not good C++ practice. Every tutorial is 
 
 Compile and see if everything is working fine. 
 
-**[Source Code is available here](https://github.com/curloz123/vklearn/tree/master/Getting%20Started/Instance)**
+**[Source Code is available here](https://codeberg.org/curl0z/vklearn/src/branch/master/Getting%20Started/Instance)**
 ## Extra Resources
 
 | Resource | Description |

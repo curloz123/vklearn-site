@@ -375,8 +375,10 @@ Since we didnt explicitly call any vkCreatePhysicalDevice (make a new GPU), ther
 
 
 
-**[Source Code is available here](https://github.com/curloz123/vklearn/tree/master/Getting%20Started/Physical%20Device)**
+**[Source Code is available here]()https://codeberg.org/curl0z/vklearn/src/branch/master/Getting%20Started/Physical%20Device**
 
 | Resource | Description |
 |---|---|
-| [Vulkan-tutorial — Physical devices and queue families](https://vulkan-tutorial.com/Drawing_a_triangle/Presentation/Window_surface) | Vulkan-tutorial's equivalent chapter, good reference |   
+| [Vulkan-tutorial — Physical device and queue families](https://vulkan-tutorial.com/Drawing_a_triangle/Setup/Physical_devices_and_queue_families) | Vulkan-tutorial's equivalent chapter, good reference but may not be enough |   
+| [Official Vulkan docs — Logical device and queues](https://docs.vulkan.org/tutorial/latest/03_Drawing_a_triangle/00_Setup/03_Physical_devices_and_queue_families.html) | Official docs, can be a bit overwhelming, but still a good read |   
+

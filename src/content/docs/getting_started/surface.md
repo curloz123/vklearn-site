@@ -62,7 +62,7 @@ vkDestroyInstance(instance, nullptr);
 
 And well, thats it. We've created the surface. Pretty easy huhhhh……
 
-Source Code is available **[here](https://github.com/curloz123/vklearn/tree/master/Getting%20Started/Surface)**
+Source Code is available **[here](https://codeberg.org/curl0z/vklearn/src/branch/master/Getting%20Started/Surface)**
 ## Extra Resources
 
 | Resource | Description |

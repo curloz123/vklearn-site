@@ -10,7 +10,7 @@ export default defineConfig({
 		starlight({
 			title: 'vklearn',
 			pagefind: true,
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/curloz123/vklearn' }],
+			social: [{ icon: 'codeberg', label: 'Codeberg', href: 'https://codeberg.org/curl0z/vklearn/src/branch/master' }],
 			sidebar: [
 				{
 					label: 'Introduction',

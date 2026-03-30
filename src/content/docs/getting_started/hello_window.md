@@ -187,7 +187,7 @@ We now have a window up and running. From the next chapter, we will start Vulkan
 
 ---
 
-**[Source Code is available here](https://github.com/curloz123/vklearn/blob/master/Getting%20Started/Hello%20Window/hellovulkan.cpp)**
+**[Source Code is available here](https://codeberg.org/curl0z/vklearn/src/branch/master/Getting%20Started/Hello%20Window)**
 ## Extra Resources
 
 | Resource | Description |
