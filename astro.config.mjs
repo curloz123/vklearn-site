@@ -5,7 +5,7 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://curl0z.codeberg.page',
-	base: '/vklearn-site',
+	// base: '/vklearn-site',
 	integrations: [
 		starlight({
 			title: 'vklearn',
