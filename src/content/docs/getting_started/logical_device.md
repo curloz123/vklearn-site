@@ -464,3 +464,12 @@ retrieveQueueHandles(device, graphicsFamilyIndex, presentFamilyIndex, &graphicsQ
 ```
 
 Compile and see if everything is fine. 
+
+
+**[Source Code is available here](https://codeberg.org/curl0z/vklearn/src/branch/master/Getting%20Started/Logical%20Device)**
+
+| Resource | Description |
+|---|---|
+| [Vulkan-tutorial — Logical device and queues](https://vulkan-tutorial.com/Drawing_a_triangle/Setup/Logical_device_and_queues) | Vulkan-tutorial's equivalent chapter, good reference but may not be enough |   
+| [Official Vulkan docs — Logical device and queues](https://docs.vulkan.org/tutorial/latest/03_Drawing_a_triangle/00_Setup/04_Logical_device_and_queues.html) | Official docs, can be a bit overwhelming, but still a good read |   
+
