@@ -109,8 +109,9 @@ Now, we need to select a device that is suitable for our needs. Right now our ne
 
 1. **Vulkan 1.3 support** – Check if the device supports version 1.3
 2. **Graphics support** – Check if the device can be used for graphics purposes
+2. **Presentation support** – Check if the device can be actually present something
 
-The second one might seem unnecessary as except some server GPU's, most support them. But well, I've kept it because it teaches another important concept we'll encounter in the next chapter.
+The second and third one might seem unnecessary as except some server GPU's, most support them. But well, I've kept it because it teaches another important concept we'll encounter in the next chapter.
 
 Now for users with multiple GPU's, either we can select any gpu that passes the checks. Or, we can score the GPU's as per their features and performance and choose the best one.
 We'll proceed with the latter approach.
@@ -138,8 +139,11 @@ What happens is, we record command or the instructions ourselves, then send them
 Now there are different types of queues. Some for graphics, some for presenting etc... each for different purposes. Notice how I said queue's'. Thats cuz, as u guessed, there are multiple of em. There are multiple queues that can perform an operation. 
 The collection of all those queues that perform a certain operation is known as queue family. For example collection of all queues that perform graphics operations are known as graphics queue family.
 Also, its possible that a queue can perform multiple operations(just not at same time).
+See this image to understand better -
+![bin folder inside extracted file](../../../assets/getting_started/physical_device/queues.jpg)
 
-Presence of graphics queue is proof itself that GPU supports graphics. Now armed with all this knowledge, lets get back to checking graphics support.
+
+Presence of graphics queue is proof itself that GPU supports graphics. Now armed with all this knowledge, lets get back - 
 ```cpp
 // hellovulkan.cpp
 uint32_t queueFamilyCount = 0;
@@ -147,6 +151,7 @@ vkGetPhysicalDeviceQueueFamilyProperties(physicalDevices[i], &queueFamilyCount, 
 std::vector<VkQueueFamilyProperties> queueFamilies(queueFamilyCount);
 vkGetPhysicalDeviceQueueFamilyProperties(physicalDevices[i], &queueFamilyCount, queueFamilies.data());
 
+// check for graphics support
 bool graphicsSupport = false;
 for (int j = 0; j < queueFamilies.size(); ++j)
 {
@@ -171,6 +176,39 @@ Then we looped over all queues and checked if the `VK_QUEUE_GRAPHICS_BIT` is ena
 For example. say graphics BIT is 0001, and flags(BITS) enabled for current queue is 1101.
 If we use & operator, we are left with 1 aka non zero. Which is as we all know in C++ means true.
 
+### Checking for presentation support
+Checking for presentation support is similar to graphics, but a bit easier as there is a direct function that tells us if present support is present or not - 
+```cpp
+uint32_t queueFamilyCount = 0;
+vkGetPhysicalDeviceQueueFamilyProperties(physicalDevices[i], &queueFamilyCount, nullptr);
+std::vector<VkQueueFamilyProperties> queueFamilies(queueFamilyCount);
+vkGetPhysicalDeviceQueueFamilyProperties(physicalDevices[i], &queueFamilyCount, queueFamilies.data());
+
+// flag for graphics support
+bool graphicsSupport = false;
+// flag for present support
+VkBool32 presentSupport = false;
+for (int j = 0; j < queueFamilies.size(); ++j)
+{
+    // Graphics Support
+    if (queueFamilies[j].queueFlags & VK_QUEUE_GRAPHICS_BIT)
+        graphicsSupport = true;
+
+    // Present Support
+    vkGetPhysicalDeviceSurfaceSupportKHR(physicalDevices[i], i, surface, &presentSupport);
+
+    if (graphicsSupport && presentSupport)
+        break;
+
+}
+
+if (!graphicsSupport || !presentSupport)
+{
+    printf("Physical Device: %s, is not suitable\n", deviceProperties.deviceName);
+    continue;
+}
+```
+
 ### Scoring the GPU's
 
 Now just above the loop, add a variable that will keep the maximum score:
@@ -184,7 +222,9 @@ Now, our first scoring parameter is gonna be `maxImageDimension2D`.
 Its is basically the largest dimension (height or width) of an image.
 
 :::note
-I know I taught in the "Hello Window" chapter that it is "buffer" that we present on the screen. But in vulkan terms, its kind of different. What we present on the screen aka what the monitor draws, is called an "Image", while "buffer" is just a plain raw block of data. Confusing :( but it is what it is.
+I know I taught in the "Hello Window" chapter that it is "buffer" that we present on the screen. But in vulkan terms, its kind of different. What we present on the screen aka what the monitor draws, is called an "Image". While "buffer" is just a plain raw block of data. Confusing :( but it is what it is. 
+
+Think of an image as a special type of buffer but in a special format.
 :::
 
 Second is going to be a simple check if the GPU is discrete or not.
@@ -228,7 +268,7 @@ And well, thats all. Now lets just create a function -
 ```cpp
 // boilerplate.hpp
 
-bool selectPhysicalDevice(VkInstance instance, VkPhysicalDevice *pPhysicalDevice)
+bool selectPhysicalDevice(VkInstance instance, VkSurfaceKHR surface, VkPhysicalDevice *pPhysicalDevice)
 {
     uint32_t numPhysicalDevices = 0;
     vkEnumeratePhysicalDevices(instance, &numPhysicalDevices, nullptr);
@@ -321,6 +361,8 @@ VkPhysicalDeviceProperties deviceProperties;
 vkGetPhysicalDeviceProperties(physicalDevice, &deviceProperties);
 printf("Selected GPU: %s\n", deviceProperties.deviceName);
 ```
+### Retrieving queue family indexes
+Just one last thing left. we need to retrieve the queue family indexes (Yes, the families are just indices).
 
 Compile and see if everything is fine. 
 

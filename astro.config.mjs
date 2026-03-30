@@ -29,6 +29,7 @@ export default defineConfig({
 						{ label: 'Validation Layers', slug: 'getting_started/validation_layers' },
 						{ label: 'Window Surface', slug: 'getting_started/surface' },
 						{ label: 'Physical Device', slug: 'getting_started/physical_device' },
+						{ label: 'Logical Device', slug: 'getting_started/logical_device' },
 
 
 
