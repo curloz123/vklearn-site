@@ -17,7 +17,7 @@ export default defineConfig({
 					items: [
 						// Each item here is one entry in the navigation menu.
 						{ label: 'Introduction', slug: 'introduction/introduction' },
-						{ label: 'A Brief Introduction to Vulkan', link: 'introduction/vulkan' },
+						{ label: 'A Brief Introduction to Vulkan', slug: 'introduction/vulkan' },
 					],
 				},
 				{

@@ -1,7 +1,9 @@
 ---
 title: Physical and Logical Device
+slug: getting_started/physical_device
 description: Selecting a suitable GPU for our Vulkan application
 ---
+import Giscus from '../../../components/giscus.astro';
 
 Ok so today we are going to select what GPU or physical device in vulkan terms, we are going to use.
 
@@ -58,7 +60,6 @@ Then we proceed to loop over all the available physical devices and print their 
 
 Now lets compile and see the info -
 ![bin folder inside extracted file](../../../assets/getting_started/physical_device/ugly_info.png)
-<!-- IMAGE: ugly version output -->
 
 Ya-Uhhhhhhhhhhhhhh…….
 
@@ -99,7 +100,6 @@ for (int i = 0; i < physicalDevices.size(); ++i)
 
 Now it should print out nicely.
 ![bin folder inside extracted file](../../../assets/getting_started/physical_device/good_info.png)
-<!-- IMAGE: nice version output -->
 
 Yayyyyy :)
 
@@ -382,3 +382,7 @@ Since we didnt explicitly call any vkCreatePhysicalDevice (make a new GPU), ther
 | [Vulkan-tutorial — Physical device and queue families](https://vulkan-tutorial.com/Drawing_a_triangle/Setup/Physical_devices_and_queue_families) | Vulkan-tutorial's equivalent chapter, good reference but may not be enough |   
 | [Official Vulkan docs — Logical device and queues](https://docs.vulkan.org/tutorial/latest/03_Drawing_a_triangle/00_Setup/03_Physical_devices_and_queue_families.html) | Official docs, can be a bit overwhelming, but still a good read |   
 
+
+## 💬 Discussion
+
+<Giscus />

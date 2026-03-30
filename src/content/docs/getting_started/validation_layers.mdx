@@ -1,7 +1,9 @@
 ---
 title: Validation Layers
+slug: getting_started/validation_layers
 description: Setting up Vulkan validation layers and a custom debug messenger
 ---
+import Giscus from '../../../components/giscus.astro';
 
 So vulkan is minimalistic, barebones bla bla, we all know that. We also know that it gives programmers a lot of control. Now problem if we humans are going to handle so much, its natural we are going to make mistakes. Now thing is vulkan being minimalistic has very limited checking in their API by default. Remember how we used to set the `.sType` of each struct manually. Say we set .sType of VkInstanceCreateInfo to `VK_STRUCTURE_TYPE_APPLICATION_INFO` ?? Thats very much is possible and can lead to UB's (Undefined Behaviours) or unknown crashes.
 So to tackle this, guys at LunarG(creators of the vulkan SDK btw) created an elegant system for this known as validation layers. 
@@ -355,3 +357,8 @@ Source Code is available **[here](https://codeberg.org/curl0z/vklearn/src/branch
 | Resource | Description |
 |---|---|
 | [Vulkan-tutorial — Validation Layers](https://vulkan-tutorial.com/Drawing_a_triangle/Setup/Validation_layers) | Vulkan-tutorial's equivalent chapter, good reference |   
+
+
+## 💬 Discussion
+
+<Giscus />

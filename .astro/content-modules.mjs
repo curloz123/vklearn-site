@@ -1,4 +1,14 @@
 
 export default new Map([
-["src/content/docs/index.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Findex.mdx&astroContentModuleFlag=true")]]);
+["src/content/docs/index.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Findex.mdx&astroContentModuleFlag=true")],
+["src/content/docs/getting_started/env_setup.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Fgetting_started%2Fenv_setup.mdx&astroContentModuleFlag=true")],
+["src/content/docs/getting_started/hello_window.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Fgetting_started%2Fhello_window.mdx&astroContentModuleFlag=true")],
+["src/content/docs/getting_started/instance.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Fgetting_started%2Finstance.mdx&astroContentModuleFlag=true")],
+["src/content/docs/getting_started/logical_device.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Fgetting_started%2Flogical_device.mdx&astroContentModuleFlag=true")],
+["src/content/docs/getting_started/physical_device.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Fgetting_started%2Fphysical_device.mdx&astroContentModuleFlag=true")],
+["src/content/docs/getting_started/surface.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Fgetting_started%2Fsurface.mdx&astroContentModuleFlag=true")],
+["src/content/docs/getting_started/validation_layers.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Fgetting_started%2Fvalidation_layers.mdx&astroContentModuleFlag=true")],
+["src/content/docs/getting_started/window_setup.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Fgetting_started%2Fwindow_setup.mdx&astroContentModuleFlag=true")],
+["src/content/docs/introduction/introduction.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Fintroduction%2Fintroduction.mdx&astroContentModuleFlag=true")],
+["src/content/docs/introduction/vulkan.mdx", () => import("astro:content-layer-deferred-module?astro%3Acontent-layer-deferred-module=&fileName=src%2Fcontent%2Fdocs%2Fintroduction%2Fvulkan.mdx&astroContentModuleFlag=true")]]);
 		

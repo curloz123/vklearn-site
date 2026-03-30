@@ -1,7 +1,9 @@
 ---
 title: Logical Device
+slug: getting_started/logical_device
 description: Creating a logical device to interface with our selected GPU
 ---
+import Giscus from '../../../components/giscus.astro';
 
 Now that we have selected the physical device, we now need a way to interact with it. Which is done via a Logical device or just a device if you wanna keep it simple. This is the actual driver on the GPU hardware, and the way we communicate with our selected GPU. Most of Vulkan commands outside of debug utils or initialization stuff need device. The process will feel similar as creating an instance.
 
@@ -473,3 +475,8 @@ Compile and see if everything is fine.
 | [Vulkan-tutorial — Logical device and queues](https://vulkan-tutorial.com/Drawing_a_triangle/Setup/Logical_device_and_queues) | Vulkan-tutorial's equivalent chapter, good reference but may not be enough |   
 | [Official Vulkan docs — Logical device and queues](https://docs.vulkan.org/tutorial/latest/03_Drawing_a_triangle/00_Setup/04_Logical_device_and_queues.html) | Official docs, can be a bit overwhelming, but still a good read |   
 
+
+
+## 💬 Discussion
+
+<Giscus />
