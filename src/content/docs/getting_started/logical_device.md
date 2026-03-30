@@ -41,6 +41,8 @@ The most interesting parameter is the second one, `pNext`. We will be using this
 6th (`enabledExtensionCount`) and 7th (`ppEnabledExtensionNames`) define the device specific extensions we need. We only need to enable the "Swapchain" extension from the device. Don't worry if the name is too heavy for you. We'll learn about swapchain in an upcoming chapter.
 
 Last is what features of physical device we need to enable. We don't really need to enable any features so we'll just initialize it to NULL.
+ 
+Read more about this struct [here](https://docs.vulkan.org/refpages/latest/refpages/source/VkDeviceCreateInfo.html)
 
 Lets start now -
 
@@ -141,7 +143,7 @@ Code is pretty similar to how we checked for graphics and presentation support i
 ### Specifying which queues we want to use
 
 Let us finally tell the device about what queues we are going to use.
-For each different queue, we need to create a `VkDeviceQueueCreateInfo`, which we pass later to the logical device creation struct which tells it blah blah blah…..
+For each different queue, we need to create a `VkDeviceQueueCreateInfo`, which we pass later to the logical device creation struct which tells it blah blah blah.... Read more about this [here](VkDeviceQueueCreateInfo)
 
 here -
 
